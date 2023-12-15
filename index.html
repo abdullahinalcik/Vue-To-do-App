@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Vue To Do App</title>
+  </head>
+  <body>
+    <div id="app">
+        <div class="container ">
+            <div class=" p-2 text-center ">
+              <h1 class="mb-4 ">VUE TO DO LIST</h1>
+              <div class="d-flex justify-content-center">
+                <input
+                id="inputText"
+                  type="text "
+                  class="form-control w-75"
+                  placeholder="Enter your task"
+                  aria-label="Recipient's username"
+                  aria-describedby="button-add1"
+                  @keydown.enter="addList"
+                  
+                />
+                <button
+                  class="btn ms-1 border-black fs-4 rounded-5 p-0"
+                  type="button"
+                  id="button-add1"
+                  @click="addListBtn"
+
+                >
+                  +
+                </button>
+              </div>
+            </div>
+            <div class="p-2  ">
+              <ul id="todo-ul" class="">
+                <li v-for="item in list" :key="item.id" class="fw-bold d-flex fs-5 justify-content-between align-items-center mb-1 p-1" :class="{backgroundIsDone:item.checked}">
+                  <input
+                    class="form-check-input border border-3 border-danger"
+                    type="checkbox"
+                    v-model="item.checked"
+                    :id="`check ${item.id}`"
+                   
+                   
+                  />
+                  <label class="form-check-label" :for="`check ${list.id}`">
+                    {{ item.text }}
+                  </label>
+                  <button id="deleteBtn" class="btn btn-danger " @click="removeItem(item)">Delete</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+       
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 52rem;
+  font-family: sans-serif;
+  h1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: "Permanent Marker", cursive;
+  }
+  #button-add1 {
+    /* padding: 0px; */
+    width: 45px;
+    height: 45px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  #button-add1:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.4s;
+    background-color: rgb(255, 47, 47);
+  }
+}
+
+ul {
+  font-family: "Kalam", cursive;
+  margin:auto;
+  width: 45rem;
+
+
+  & li {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+  & li:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  & li:nth-child(odd) {
+    background-color: #ffffff3d;
+  }
+
+  & #deleteBtn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.6s;
+    color: tomato;
+  }
+  .form-check-input:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    border-radius: 0.5rem;
+    transition: all 0.6s;
+  }
+}
+.backgroundIsDone {
+  background-color: greenyellow !important;
+}
